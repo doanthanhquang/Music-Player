@@ -98,7 +98,7 @@ header h2{
     color: var(--primary-color);
 }
 
-.control .btn-toggle-player{
+.control .btn-toggle-play{
     width: 56px;
     height: 56px;
     border-radius: 50%;

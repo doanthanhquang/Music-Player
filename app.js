@@ -7,12 +7,14 @@
  * 6. random
  * 7. next/ repeat when ended
  * 8. active song
- * 9. scroll actiave song into view
+ * 9. scroll active song into view
  * 10. play song when click
 */
 
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
+
+
 
 const player = $('.player')
 const playlist = $('.playlist')
@@ -111,13 +113,18 @@ const app ={
             singer: "Hatsune Miku",
             path: "./music/song13.mp3",
             image: "https://photo-resize-zmp3.zmdcdn.me/w600_r1x1_webp/cover/9/9/b/6/99b6bc92ae1c3c0210523b9fdf0aaf9d.jpg"
+        }, 
+        {
+            name: "Cực Giống Rồi / 像极了",
+            singer: "Vĩnh Bân Ryan.B",
+            path: "./music/song14.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/e/0/9/7/e0973b954d6fc3a8a1c7a78e63477360.jpg"
         }
     ],
-
     render: function(){
         const htmls = this.songs.map((song, index) => {
             return `
-            <div class="song ${index === this.currentIndex ? 'active' : ""}">
+            <div class="song ${index === this.currentIndex ? 'active' : ""}" data-index="${index}">
                 <div class="thumb" style="background-image: url('${song.image}')">
                 </div>
                     <div class="body">
@@ -201,6 +208,7 @@ const app ={
             }
             audio.play()
             app.render()
+            app.scrollToActiveSong()
         }
         //when prev song
         prevBtn.onclick = function(){
@@ -211,6 +219,7 @@ const app ={
             }
             audio.play()
             app.render()
+            app.scrollToActiveSong()
         }
         //handle on/off button random song
         randomBtn.onclick = function(){
@@ -241,6 +250,22 @@ const app ={
                 nextBtn.click()
             }
         }
+        //handle click into playlist
+        playlist.onclick = function(e){    
+            const songNode = e.target.closest('.song:not(.active)')       
+            if( songNode || e.target.closest('.option')){
+                //handle when click song
+                if(songNode){
+                    app.currentIndex = Number(songNode.dataset.index) //convert string to number
+                    app.loadCurrentSong()
+                    audio.play()
+                    app.render()
+                }
+                //handle when click song option
+                if(e.target.closest('.option')){
+                }
+            }
+        }
     },
     loadCurrentSong: function(){
         heading.textContent = this.currentSong.name
@@ -268,6 +293,14 @@ const app ={
         }while(newIndex === this.currentIndex)
         this.currentIndex = newIndex
         this.loadCurrentSong()
+    },
+    scrollToActiveSong: function(){
+        setTimeout(() =>{
+            $('.song.active').scrollIntoView({
+                behavior: "smooth", 
+                block: "center", 
+                inline: "nearest"})
+        }, 100)
     },
     start: function(){
         //define properties for project

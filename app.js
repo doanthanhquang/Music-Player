@@ -119,7 +119,55 @@ const app ={
             singer: "Vĩnh Bân Ryan.B",
             path: "./music/song14.mp3",
             image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/e/0/9/7/e0973b954d6fc3a8a1c7a78e63477360.jpg"
-        }
+        },
+        {
+            name: "Tát Nhật Lãng Rực Rỡ",
+            singer: "Hatsune Miku",
+            path: "./music/song15.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/d/3/d/8/d3d8d2a692974f9f2fd53bd381af2880.jpg"
+        },
+        {
+            name: "Gió Đêm Tỏ Tình",
+            singer: "Tinh Dã",
+            path: "./music/song16.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/d/8/8/a/d88aef4b85334e6e0bc7471760e07a3e.jpg"
+        },
+        {
+            name: "Rất Muốn Ôm Em Sống Cuộc Sống Bình Thường",
+            singer: "Lão Phàn Cách Vách",
+            path: "./music/song17.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/3/2/a/3/32a35f4d26ee56366397c09953f6c269.jpg"
+        },
+        {
+            name: "Ác Ma Đến Từ Thiên Đường",
+            singer: "Đặng Tử Kỳ",
+            path: "./music/song18.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/1/4/4/3/14432da03053bf14fb8b77eb26500877.jpg"
+        },
+        {
+            name: "Xích Linh",
+            singer: "Chấp Tố Hề",
+            path: "./music/song19.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/2/1/d/d/21dd4d9a2eb8a18a45dd6fcefc37bed1.jpg"
+        },
+        {
+            name: "Waiting For Love",
+            singer: "Avicii",
+            path: "./music/song20.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/5/8/3/f/583f71239a28993ae2d8c4147a0cf066.jpg"
+        },
+        {
+            name: "The Night",
+            singer: "Avicii",
+            path: "./music/song21.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/0/a/e/7/0ae70a949d6a72c8c7d5682046a3996c.jpg"
+        },
+        {
+            name: "Wake Me Up",
+            singer: "Avicii",
+            path: "./music/song22.mp3",
+            image: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/covers/f/3/f3ccdd27d2000e3f9255a7e3e2c48800_1415500799.jpg"
+        },
     ],
     render: function(){
         const htmls = this.songs.map((song, index) => {
